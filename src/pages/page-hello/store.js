@@ -1,5 +1,5 @@
 import { action, observable, runInAction } from 'mobx'
-import { message } from 'antd'
+import { Toast } from 'antd-mobile'
 import io from './io'
 
 class Store {
@@ -14,7 +14,7 @@ class Store {
         this.content = content.name
       })
     } catch(e) {
-      message.error(e.message)
+      Toast.fail(e.message, 1)
     }
   }
 }

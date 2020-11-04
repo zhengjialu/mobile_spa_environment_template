@@ -10,7 +10,7 @@ const mockJson = require('../../../mock/mock-hello.json')
  */
 const io = requestIO.createIo('hello', {
   testIo: {
-    mock: false,
+    mock: true,
     method: 'POST',
     url: '/api/v1/xxxx/path/getTypeList',
     mockData: mockJson['testIo']

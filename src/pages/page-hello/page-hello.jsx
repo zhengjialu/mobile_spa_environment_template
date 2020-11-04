@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { observer } from 'mobx-react'
 import { action, observable } from 'mobx'
 import Store from './store'
-import { Button } from 'antd'
+import { Button } from 'antd-mobile'
 
 const store = new Store()
 

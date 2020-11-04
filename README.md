@@ -31,7 +31,6 @@
 │   │   │   ├── frame.jsx
 │   │   │   ├── frame.styl
 │   │   │   ├── index.js
-│   │   │   └── nav.jsx
 │   ├── pages                      前端页面
 │   │   ├── index.jsx              路由渲染定义
 │   │   └── page-hello             项目模块
