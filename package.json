@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zhengjialu/react_spa_environment_template.git"
+    "url": ""
   },
   "author": "jialu",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/zhengjialu/react_spa_environment_template/issues"
+    "url": ""
   },
-  "homepage": "https://github.com/zhengjialu/react_spa_environment_template#readme",
+  "homepage": "",
   "browserslist": [
     "> 1%",
     "last 2 versions"
