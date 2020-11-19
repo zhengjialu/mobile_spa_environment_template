@@ -16,7 +16,7 @@ module.exports = {
       'postcss-pxtorem',
       {
         // Options
-      }
-    ]
+      },
+    ],
   ],
 }

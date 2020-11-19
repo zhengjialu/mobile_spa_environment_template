@@ -19,8 +19,11 @@ class Hello extends Component {
   render() {
     return (
       <div className="page-hello">
-        {store.content}
-        <Button type="link" onClick={this.onClick}>点击</Button>
+        {' '}
+        {store.content}{' '}
+        <Button type="link" onClick={this.onClick}>
+          点击{' '}
+        </Button>{' '}
       </div>
     )
   }

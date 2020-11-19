@@ -5,17 +5,17 @@ import Frame from '../layout/frame'
 import Hello from './page-hello'
 
 // 路由匹配定义
-const routeConfig = [
-  { path: "/", component: Hello }
-]
+const routeConfig = [{ path: '/', component: Hello }]
 
 class RouterUrl extends Component {
   render() {
-    return(
+    return (
       <Router>
         <Frame>
           <Switch>
-            { routeConfig.map((item, i) => <Route exact key={i} path={item.path} component={item.component} />) }
+            {routeConfig.map((item, i) => (
+              <Route exact key={i} path={item.path} component={item.component} />
+            ))}
             <Route path="*">没有匹配到页面</Route>
             <Redirect from="/hello" to="/" />
           </Switch>

@@ -14,17 +14,17 @@ class requestIO {
   createIo(name, ioContent) {
     // 追加自定义请求项
     const request = this.request({
-      headers: {} // 自定义请求头信息
+      headers: {}, // 自定义请求头信息
     })
     // 请求集合
     const content = {}
-    Object.keys(ioContent).forEach(key => {
+    Object.keys(ioContent).forEach((key) => {
       // 请求配置项
       content[key] = (options = {}) => {
         options = {
           data: options,
         }
-        const option = {...ioContent[key], ...options}
+        const option = { ...ioContent[key], ...options }
         return request(option)
       }
     })
@@ -38,13 +38,17 @@ class requestIO {
    * @returns {message, content, code, success: boolean}
    */
   request(option) {
-    return async defineOptions => {
+    return async (defineOptions) => {
       const options = {
         url: '',
         method: 'GET',
         timeout: option.timeout || 60 * 1000,
-        headers: {'Content-Type': 'application/json', 'X-Requested-With': 'XMLHttpRequest', ...option.headers},
-        ...defineOptions
+        headers: {
+          'Content-Type': 'application/json',
+          'X-Requested-With': 'XMLHttpRequest',
+          ...option.headers,
+        },
+        ...defineOptions,
       }
 
       // 常规请求处理
@@ -87,16 +91,18 @@ class requestIO {
         }
       }
 
-      if (options.headers['Content-Type'] === 'application/json' && options.body && typeof options.body !== 'string') {
+      if (
+        options.headers['Content-Type'] === 'application/json' &&
+        options.body &&
+        typeof options.body !== 'string'
+      ) {
         options.body = JSON.stringify(options.body)
       }
 
       // 处理 mock 数据
       let retData = {}
       if (options.mock) {
-        retData = await new Promise((resolve) =>
-          resolve(options.mockData)
-        )
+        retData = await new Promise((resolve) => resolve(options.mockData))
       } else {
         try {
           const opts = {
@@ -108,7 +114,7 @@ class requestIO {
             data: options.body,
             timeout: options.timeout,
           }
-          const {data} = await axios(opts)
+          const { data } = await axios(opts)
           retData = data
         } catch (err) {
           retData.success = false
@@ -130,4 +136,4 @@ class requestIO {
 // ﹡﹡﹡﹡﹡﹡﹡﹡﹡﹡﹡﹡End﹡﹡﹡﹡﹡﹡﹡﹡﹡﹡﹡﹡
 // <--------------------------------------------->
 
-export default new requestIO
+export default new requestIO()

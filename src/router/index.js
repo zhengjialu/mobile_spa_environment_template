@@ -8,8 +8,8 @@ const routeUrl = [
         value: '1-1',
         label: 'hello1',
         url: '/222',
-      }
-    ]
+      },
+    ],
   },
   {
     value: '2',
@@ -20,9 +20,9 @@ const routeUrl = [
         value: '2-1',
         label: 'hello1',
         url: '/222',
-      }
-    ]
-  }
+      },
+    ],
+  },
 ]
 
 export default routeUrl
