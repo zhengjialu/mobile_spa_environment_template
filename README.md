@@ -17,6 +17,10 @@
 ├── .babelrc                       babel 配置项
 ├── .nycrc                         单元测试配置项
 ├── .gitignore
+├── .eslintignore
+├── .eslintrc.js                   代码检查配置项
+├── .prettierignore
+├── .prettierrc.js                 代码格式化配置项
 ├── src                            页面开发
 │   ├── assets                     项目资源
 │   │   ├── icons                  项目 icon 资源
@@ -25,7 +29,7 @@
 │   │   ├── request-io.js          IO 请求工具
 │   │   └── utils.js               自定义工具函数
 │   ├── components                 页面组件
-│   ├── index.ejs                  入口文件
+│   ├── index.ejs                  HTML 入口文件
 │   ├── layout                     项目页面布局
 │   │   ├── frame                  项目全局框架
 │   │   │   ├── frame.jsx
